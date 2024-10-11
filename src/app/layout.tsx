@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -28,6 +30,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav className="flex justify-center">
+          <ul className="flex justify-center items-center gap-6 w-full">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/child">Child</Link>
+            </li>
+            <li>
+              <Link href="/sibling">Sibling</Link>
+            </li>
+          </ul>
+        </nav>
         {children}
       </body>
     </html>
